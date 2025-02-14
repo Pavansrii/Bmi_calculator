@@ -1,0 +1,416 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+.MsoChpDefault
+	{font-family:"Arial",sans-serif;}
+.MsoPapDefault
+	{line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN>&lt;!DOCTYPE html&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;html lang=&quot;en&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;head&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;meta name=&quot;viewport&quot;
+content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;title&gt;BMI Calculator&lt;/title&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;style&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    /* General Styles */</span></p>
+
+<p class=MsoNormal><span lang=EN>    body {</span></p>
+
+<p class=MsoNormal><span lang=EN>      display: flex;</span></p>
+
+<p class=MsoNormal><span lang=EN>      justify-content: center;</span></p>
+
+<p class=MsoNormal><span lang=EN>      align-items: center;</span></p>
+
+<p class=MsoNormal><span lang=EN>      height: 100vh;</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin: 0;</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-family: 'Arial', sans-serif;</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: linear-gradient(135deg,
+#6a11cb, #2575fc);</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #fff;</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    .calculator {</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: rgba(255, 255, 255, 0.1);</span></p>
+
+<p class=MsoNormal><span lang=EN>      padding: 30px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      border-radius: 15px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      box-shadow: 0 10px 30px rgba(0, 0, 0,
+0.2);</span></p>
+
+<p class=MsoNormal><span lang=EN>      backdrop-filter: blur(10px);</span></p>
+
+<p class=MsoNormal><span lang=EN>      text-align: center;</span></p>
+
+<p class=MsoNormal><span lang=EN>      width: 350px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      animation: fadeIn 1s ease-in-out;</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    h1 {</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-size: 28px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin-bottom: 20px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #fff;</span></p>
+
+<p class=MsoNormal><span lang=EN>      text-shadow: 2px 2px 4px rgba(0, 0, 0,
+0.2);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    input[type=&quot;number&quot;] {</span></p>
+
+<p class=MsoNormal><span lang=EN>      width: 100%;</span></p>
+
+<p class=MsoNormal><span lang=EN>      padding: 12px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin-bottom: 15px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-size: 16px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      border: none;</span></p>
+
+<p class=MsoNormal><span lang=EN>      border-radius: 8px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: rgba(255, 255, 255, 0.2);</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #fff;</span></p>
+
+<p class=MsoNormal><span lang=EN>      outline: none;</span></p>
+
+<p class=MsoNormal><span lang=EN>      transition: background 0.3s ease;</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    input[type=&quot;number&quot;]::placeholder
+{</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: rgba(255, 255, 255, 0.7);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    input[type=&quot;number&quot;]:focus {</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: rgba(255, 255, 255, 0.3);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    button {</span></p>
+
+<p class=MsoNormal><span lang=EN>      padding: 12px 24px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-size: 16px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      border: none;</span></p>
+
+<p class=MsoNormal><span lang=EN>      border-radius: 8px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: #28a745;</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #fff;</span></p>
+
+<p class=MsoNormal><span lang=EN>      cursor: pointer;</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin: 5px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      transition: background 0.3s ease,
+transform 0.2s ease;</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    button:hover {</span></p>
+
+<p class=MsoNormal><span lang=EN>      background: #218838;</span></p>
+
+<p class=MsoNormal><span lang=EN>      transform: translateY(-2px);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    button:active {</span></p>
+
+<p class=MsoNormal><span lang=EN>      transform: translateY(0);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    #result {</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin-top: 20px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-size: 18px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #fff;</span></p>
+
+<p class=MsoNormal><span lang=EN>      text-shadow: 1px 1px 3px rgba(0, 0, 0,
+0.2);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    .error {</span></p>
+
+<p class=MsoNormal><span lang=EN>      color: #ff6b6b;</span></p>
+
+<p class=MsoNormal><span lang=EN>      font-size: 14px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      margin-top: 10px;</span></p>
+
+<p class=MsoNormal><span lang=EN>      text-shadow: 1px 1px 3px rgba(0, 0, 0,
+0.2);</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    /* Animations */</span></p>
+
+<p class=MsoNormal><span lang=EN>    @keyframes fadeIn {</span></p>
+
+<p class=MsoNormal><span lang=EN>      from {</span></p>
+
+<p class=MsoNormal><span lang=EN>        opacity: 0;</span></p>
+
+<p class=MsoNormal><span lang=EN>        transform: translateY(-20px);</span></p>
+
+<p class=MsoNormal><span lang=EN>      }</span></p>
+
+<p class=MsoNormal><span lang=EN>      to {</span></p>
+
+<p class=MsoNormal><span lang=EN>        opacity: 1;</span></p>
+
+<p class=MsoNormal><span lang=EN>        transform: translateY(0);</span></p>
+
+<p class=MsoNormal><span lang=EN>      }</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;/style&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;/head&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;body&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;div class=&quot;calculator&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;h1&gt;BMI Calculator&lt;/h1&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;input type=&quot;number&quot;
+id=&quot;height&quot; placeholder=&quot;Enter height (in cm)&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;input type=&quot;number&quot;
+id=&quot;weight&quot; placeholder=&quot;Enter weight (in kg)&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>      &lt;button
+onclick=&quot;calculateBMI()&quot;&gt;Calculate&lt;/button&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>      &lt;button
+onclick=&quot;resetCalculator()&quot;&gt;Reset&lt;/button&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;/div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;div
+id=&quot;result&quot;&gt;&lt;/div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    &lt;div id=&quot;error&quot;
+class=&quot;error&quot;&gt;&lt;/div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;/div&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;script&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>    function calculateBMI() {</span></p>
+
+<p class=MsoNormal><span lang=EN>      const height =
+parseFloat(document.getElementById('height').value);</span></p>
+
+<p class=MsoNormal><span lang=EN>      const weight =
+parseFloat(document.getElementById('weight').value);</span></p>
+
+<p class=MsoNormal><span lang=EN>      const resultDiv =
+document.getElementById('result');</span></p>
+
+<p class=MsoNormal><span lang=EN>      const errorDiv =
+document.getElementById('error');</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>      // Clear previous results and errors</span></p>
+
+<p class=MsoNormal><span lang=EN>      resultDiv.textContent = '';</span></p>
+
+<p class=MsoNormal><span lang=EN>      errorDiv.textContent = '';</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>      // Validate input</span></p>
+
+<p class=MsoNormal><span lang=EN>      if (!height || isNaN(height) || height
+&lt;= 0) {</span></p>
+
+<p class=MsoNormal><span lang=EN>        errorDiv.textContent = 'Please enter a
+valid height (positive number).';</span></p>
+
+<p class=MsoNormal><span lang=EN>        return;</span></p>
+
+<p class=MsoNormal><span lang=EN>      }</span></p>
+
+<p class=MsoNormal><span lang=EN>      if (!weight || isNaN(weight) || weight
+&lt;= 0) {</span></p>
+
+<p class=MsoNormal><span lang=EN>        errorDiv.textContent = 'Please enter a
+valid weight (positive number).';</span></p>
+
+<p class=MsoNormal><span lang=EN>        return;</span></p>
+
+<p class=MsoNormal><span lang=EN>      }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>      // Calculate BMI</span></p>
+
+<p class=MsoNormal><span lang=EN>      const heightInMeters = height / 100; //
+Convert cm to meters</span></p>
+
+<p class=MsoNormal><span lang=EN>      const bmi = (weight / (heightInMeters *
+heightInMeters)).toFixed(2);</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>      // Determine BMI classification</span></p>
+
+<p class=MsoNormal><span lang=EN>      let classification = '';</span></p>
+
+<p class=MsoNormal><span lang=EN>      if (bmi &lt; 18.5) {</span></p>
+
+<p class=MsoNormal><span lang=EN>        classification = 'Underweight';</span></p>
+
+<p class=MsoNormal><span lang=EN>      } else if (bmi &gt;= 18.5 &amp;&amp; bmi
+&lt; 25) {</span></p>
+
+<p class=MsoNormal><span lang=EN>        classification = 'Normal';</span></p>
+
+<p class=MsoNormal><span lang=EN>      } else if (bmi &gt;= 25 &amp;&amp; bmi
+&lt; 30) {</span></p>
+
+<p class=MsoNormal><span lang=EN>        classification = 'Overweight';</span></p>
+
+<p class=MsoNormal><span lang=EN>      } else {</span></p>
+
+<p class=MsoNormal><span lang=EN>        classification = 'Obese';</span></p>
+
+<p class=MsoNormal><span lang=EN>      }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>      // Display result</span></p>
+
+<p class=MsoNormal><span lang=EN>      resultDiv.innerHTML = `</span></p>
+
+<p class=MsoNormal><span lang=EN>        &lt;p&gt;Your BMI is:
+&lt;strong&gt;${bmi}&lt;/strong&gt;&lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>        &lt;p&gt;Classification:
+&lt;strong&gt;${classification}&lt;/strong&gt;&lt;/p&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>      `;</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN>    function resetCalculator() {</span></p>
+
+<p class=MsoNormal><span lang=EN>      document.getElementById('height').value
+= '';</span></p>
+
+<p class=MsoNormal><span lang=EN>      document.getElementById('weight').value
+= '';</span></p>
+
+<p class=MsoNormal><span lang=EN>     
+document.getElementById('result').textContent = '';</span></p>
+
+<p class=MsoNormal><span lang=EN>     
+document.getElementById('error').textContent = '';</span></p>
+
+<p class=MsoNormal><span lang=EN>    }</span></p>
+
+<p class=MsoNormal><span lang=EN>  &lt;/script&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;/body&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN>&lt;/html&gt;</span></p>
+
+</div>
+
+</body>
+
+</html>
